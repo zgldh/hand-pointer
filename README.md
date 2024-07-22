@@ -2,6 +2,10 @@
 
 ## Usage
 
+Need node 20  
+
+```nvm use```
+
 ```bash
 mkcert 0.0.0.0
 
