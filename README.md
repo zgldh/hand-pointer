@@ -9,13 +9,13 @@ Need node 20
 ```bash
 mkcert 0.0.0.0
 
-npm i
-npm run watch
+pnpm i
+pnpm run dev
 ```
 
 In another shell
 ```
-npm run https
+pnpm run https
 ```
 
 Visit https://localhost:8443

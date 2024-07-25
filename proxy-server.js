@@ -1,7 +1,7 @@
-const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-const https = require('https');
-const fs = require('fs');
+import express from 'express';
+import {createProxyMiddleware } from 'http-proxy-middleware';
+import https from 'https';
+import fs from 'fs';
 const app = express();
 
 // 读取mkcert生成的证书和私钥
@@ -20,11 +20,11 @@ app.use((req, res, next) => {
 });
 
 app.use('/', createProxyMiddleware({
-    target: 'http://localhost:1234', // parcel开发服务器地址
+    target: 'http://localhost:5173', // parcel开发服务器地址
     changeOrigin: true,
     onProxyReq: (proxyReq, req, res) => {
         // 确保请求头中的host是localhost，而不是127.0.0.1或其他
-        proxyReq.setHeader('host', 'localhost:1234');
+        proxyReq.setHeader('host', 'localhost:5173');
     }
 }));
 
